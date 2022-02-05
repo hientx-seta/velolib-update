@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Velolib - Hien TA Test</string>
+
+    <string name="list_is_empty">List is empty</string>
+    <string name="connection_error">Connection error</string>
+</resources>

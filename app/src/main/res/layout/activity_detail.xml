@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:background="@color/material_black"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:visibility="invisible"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@android:color/transparent">
+
+            <ImageView
+                android:id="@+id/stationDetailImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:paddingBottom="80dp"
+                android:paddingTop="64dp"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                android:src="@drawable/paris_plan_velo"
+                android:background="@drawable/paris_plan_velo"
+                />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:theme="@style/AppTheme.AppBarOverlay"
+                />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="@dimen/view_news_item_corner_radius"
+            app:contentPadding="@dimen/view_news_item_content_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/stationNameTextView"
+                    tools:text="Name"
+                    android:textStyle="bold"
+                    style="@style/StationItemContentStyle"
+                    android:textSize="@dimen/view_news_item_head_line_text_size"
+                    android:textColor="@android:color/primary_text_light"
+                    android:maxLines="2"
+                    />
+
+                <TextView
+                    android:id="@+id/addressTextView"
+                    tools:text="address"
+                    android:maxLines="3"
+                    style="@style/StationItemContentStyle"
+                    />
+
+                <TextView
+                    android:id="@+id/bankingTextView"
+                    tools:text="banking"
+                    style="@style/StationItemContentStyle"
+                    />
+
+                <TextView
+                    android:id="@+id/contractTextView"
+                    tools:text="contract"
+                    style="@style/StationItemContentStyle"
+                    />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/stationDetailProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_anchor="@id/appBar"
+        app:layout_anchorGravity="bottom" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/stationDetailFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/material_padding"
+        android:src="@drawable/ic_open_in_google_maps"
+        android:tint="#ffffff"
+        app:layout_anchor="@id/appBar"
+        app:layout_anchorGravity="bottom|end" />
+
+</android.support.design.widget.CoordinatorLayout>
